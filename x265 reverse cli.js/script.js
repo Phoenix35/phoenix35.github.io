@@ -728,7 +728,7 @@ Array.prototype.addCL = function (k, v, vSource) {
   else {
     if (v !== vSource)
       // Booleans have no parameters
-      this.push( (typeof v === 'boolean') ? ((v) ? '' : 'no-') +k : k+ '=' +v );
+      this.push( (typeof v === 'boolean') ? ((v) ? '' : 'no-') +k : k+ ' ' +v );
   }
 }
 
