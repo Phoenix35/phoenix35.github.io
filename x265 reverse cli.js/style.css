@@ -1,0 +1,50 @@
+code {
+  background-color: #d6d8db;
+}
+code#clargs {
+  width: 640px;
+  display: flex;
+  white-space: pre-wrap;
+  margin-bottom: 1em;
+}
+
+a[rel=external]::after {
+ content: ' ' url('external.png');
+}
+
+div.info, div.warning, div.error {
+  height: 32px;
+  display: table;
+  margin-bottom: 0.5em;
+  padding: 0.5%;
+}
+div.info::before, div.warning::before, div.error::before {
+  content: '';
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background: url('icons.png') content-box;
+  vertical-align: middle;
+  margin-right: 0.5em;
+}
+
+div.info {
+  background-color: #CCFFFF;
+}
+div.info::before {
+  background-position: -32px;
+}
+
+div.warning {
+  background-color: #FFFFCC;
+}
+div.warning::before {
+  background-position: 0px;
+}
+
+div.error {
+  background-color: #FFCCCC;
+}
+div.error::before {
+  background-position: -64px;
+}

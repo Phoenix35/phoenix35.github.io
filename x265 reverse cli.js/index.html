@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='UTF-8' />
+  <link href='normalize.css' rel='stylesheet' type='text/css' />
+  <link href='style.css' rel='stylesheet' type='text/css' />
+  <title>Parse x265 settings</title>
+  <script src='script.js'></script>
+</head>
+<body>
+
+<p><button onclick="return toggleNightMode();">Toggle night mode</button></p>
+<p>Paste x265 encoding settings (output may be incorrect for x265 2.3 and below)</p>
+<form id='myform' name='myform' action='#'>
+  <textarea required></textarea>
+  <input type='submit' />
+</form>
+<code id='clargs'>
+</code>
+<div id='precisions'></div>
+<div class='info'>I</div>
+<div class='warning'>W</div>
+<div class='error'>E</div>
+</body>
+</html>
