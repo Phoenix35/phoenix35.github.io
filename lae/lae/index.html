@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='fr'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sample for the various functions</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <script src="lib/ajax.js" charset="utf-8"></script>
+    <script src="lib/canvas.js" charset="utf-8"></script>
+    <script src="lib/xpath.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      'use strict';
+      let test = {};
+      test.ajax = (form) => {
+        let chosenMethod;
+        for (let method of document.getElementsByName('method')) {
+          if (method.checked) {
+            chosenMethod = method.value;
+            break;
+          }
+        }
+        let promiseRequest = lae.ajax(
+          "https://developer.mozilla.org/en-US/search.json",
+          chosenMethod
+        )({
+          'form': form,
+          '_credentials': {'withCredentials': true}
+        });
+        promiseRequest.then(result => {
+          console.log(result);
+        });
+        return false;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>LAE AJAX Test</h1>
+    <p>
+      <fieldset>
+        <legend>
+          Query the MDN API
+        </legend>
+        <label>
+          GET
+          <input type="radio" name="method" checked="checked" value="GET" />
+        </label>
+        <label>
+          POST
+          <input type="radio" name="method" value="POST" />
+        </label>
+        <form action="index.html" onsubmit="return test.ajax(this);">
+          <label>
+            Topic:
+            <input type="text" name="topic" value="js"      required="required" pattern="[\w-]+" />
+          </label>
+          <label>
+            Query:
+            <input type="text" name="q"     value="promise" required="required" pattern="[\w-]+" /> </label>
+          <p><button>Test button</button></p>
+        </form>
+
+      </fieldset>
+    </p>
+  </body>
+</html>
