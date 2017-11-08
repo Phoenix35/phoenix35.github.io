@@ -128,7 +128,7 @@
         let uri;
 
         // url has priority over the form's action attribute
-        if (typeof url !== 'string' && url !== '') {
+        if (typeof url === 'string' && url !== '') {
           uri = url;
         }
         // If no url was provided and form contains action,
