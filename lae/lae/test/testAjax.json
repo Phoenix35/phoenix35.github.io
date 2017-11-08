@@ -1,0 +1,8 @@
+{
+  "viaAjax": {
+    "test01": {
+      "life": 42,
+      "body": "Hello World!"
+    }
+  }
+}

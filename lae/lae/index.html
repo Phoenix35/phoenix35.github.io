@@ -19,12 +19,9 @@
           }
         }
         let promiseRequest = lae.ajax(
-          "https://developer.mozilla.org/en-US/search.json",
+          "/test/testAjax.json",
           chosenMethod
-        )({
-          'form': form,
-          '_credentials': {'withCredentials': true}
-        });
+        )({'form': form});
         promiseRequest.then(result => {
           console.log(result);
         });
@@ -49,13 +46,10 @@
         </label>
         <form action="index.html" onsubmit="return test.ajax(this);">
           <label>
-            Topic:
-            <input type="text" name="topic" value="js"      required="required" pattern="[\w-]+" />
+            Element:
+            <input type="text" name="viaAjax" value="test01" required="required" pattern="[\w-]+" />
           </label>
-          <label>
-            Query:
-            <input type="text" name="q"     value="promise" required="required" pattern="[\w-]+" /> </label>
-          <p><button>Test button</button></p>
+          <p><input type="submit" value="Fetch my JSON" /></p>
         </form>
 
       </fieldset>
