@@ -15,7 +15,9 @@ function *giveUniqueMapping (array) {
 
     seen.add(to);
 
-    yield [x, to];
+    const code = String(getRandInt(1E8)).padStart(8, "0");
+
+    yield [x, [code, to]];
   }
 }
 
