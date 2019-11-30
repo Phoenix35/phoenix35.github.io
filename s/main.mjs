@@ -2,11 +2,11 @@
 
 const o = JSON.parse(atob(base64Str));
 
-const { hash } = window.location;
+const recipient = window.location.substring(1);
 
 alert(
-  o.hasOwnProperty(hash)
-    ? `Tu offres à ${obj[hash]}`
+  o.hasOwnProperty(recipient)
+    ? `Tu offres à ${obj[recipient]}`
     : "Petit malin"
 );
 
