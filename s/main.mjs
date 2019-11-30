@@ -64,9 +64,9 @@ function after (base64Str) {
 
   alert(
     o.hasOwnProperty(hash)
-    ? "Petit malin"
-    : `Tu offres à ${obj[hash]}`
+      ? `Tu offres à ${obj[hash]}`
+      : "Petit malin"
   );
 }
 
-after("");
+after("{}");
