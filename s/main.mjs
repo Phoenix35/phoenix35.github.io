@@ -1,56 +1,13 @@
-function getRandInt (maxExcl) {
-  return Math.floor(Math.random() * maxExcl);
-}
+(function main (base64Str) {
 
-function *giveUniqueMapping (array) {
-  const seen = new Set,
-        arrayLength = array.length;
+const o = JSON.parse(atob(base64Str));
 
-  for (const x of array) {
-    let to;
+const { hash } = window.location;
 
-    do
-      to = array[getRandInt(arrayLength)];
-    while (x === to || seen.has(to));
+alert(
+  o.hasOwnProperty(hash)
+    ? `Tu offres à ${obj[hash]}`
+    : "Petit malin"
+);
 
-    seen.add(to);
-
-    const code = String(getRandInt(1E8)).padStart(8, "0");
-
-    yield [x, [code, to]];
-  }
-}
-
-(function main () {
-
-const party = [
-  "Alexis",
-  "Bruno",
-  "Clemence",
-  "Melanie",
-  "Nathan",
-  "Romane",
-  "Solene",
-],
-      map = Array.from(giveUniqueMapping(party)),
-      frag = document.createDocumentFragment(),
-      finalMap = Object.create(null);
-
-for (const [ sender, [ codeLink, recipient] ] of map) {
-  finalMap[codeLink] = recipient;
-
-  const p = document.createElement("p");
-  const a = document.createElement("a");
-  a.href = `${window.location.href}#${codeLink}`;
-  a.textContent = a.href;
-
-  p.append(sender, " offre à ", a);
-
-  frag.appendChild(p);
-}
-
-console.log(btoa(JSON.stringify(finalMap)));
-
-document.body.appendChild(frag);
-
-})();
+})("eyIxMDA0OTYzOSI6Ik1lbGFuaWUiLCIxNTg1NDIzOCI6IlJvbWFuZSIsIjIzNzUyMDczIjoiQWxleGlzIiwiNDg2NTgwNzQiOiJCcnVubyIsIjY0MTY4ODQ0IjoiU29sZW5lIiwiOTQzMjA4MDEiOiJDbGVtZW5jZSIsIjA4NTg0Mzk5IjoiTmF0aGFuIn0=");
