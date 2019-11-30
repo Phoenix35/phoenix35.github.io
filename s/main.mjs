@@ -33,19 +33,25 @@ const party = [
   "Solene",
 ],
       map = Array.from(giveUniqueMapping(party)),
-      mapStr = btoa(JSON.stringify(map)),
       frag = document.createDocumentFragment(),
       body = document.body;
 
+const finalMap = [];
+
 for (const [ sender, [ codeLink, recipient] ] of map) {
+  final.push([codeLink, recipient]);
+
   const p = document.createElement("p");
   const a = document.createElement("a");
-  a.href = `${window.location.href}#{code}`;
+  a.href = `${window.location.href}#${code}`;
+  a.textContent = a.href;
 
   p.append(sender, " offre à ", a);
 
   frag.appendChild(p);
 }
+
+console.log(btoa(JSON.stringify(finalMap));
 
 body.appendChild(frag);
 
