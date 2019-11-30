@@ -51,7 +51,7 @@ for (const [ sender, [ codeLink, recipient] ] of map) {
   frag.appendChild(p);
 }
 
-console.log(btoa(JSON.stringify(finalMap));
+console.log(btoa(JSON.stringify(finalMap)));
 
 body.appendChild(frag);
 
