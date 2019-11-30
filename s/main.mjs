@@ -39,7 +39,7 @@ const party = [
 const finalMap = [];
 
 for (const [ sender, [ codeLink, recipient] ] of map) {
-  final.push([codeLink, recipient]);
+  finalMap.push([codeLink, recipient]);
 
   const p = document.createElement("p");
   const a = document.createElement("a");
