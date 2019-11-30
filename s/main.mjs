@@ -43,7 +43,7 @@ for (const [ sender, [ codeLink, recipient] ] of map) {
 
   const p = document.createElement("p");
   const a = document.createElement("a");
-  a.href = `${window.location.href}#${code}`;
+  a.href = `${window.location.href}#${codeLink}`;
   a.textContent = a.href;
 
   p.append(sender, " offre à ", a);
