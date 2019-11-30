@@ -69,4 +69,4 @@ function after (base64Str) {
   );
 }
 
-after("{}");
+after(btoa(JSON.stringify({})));
