@@ -32,10 +32,12 @@ const party = [
   "Romane",
   "Solène",
 ],
-      map = new Map(giveUniqueMapping(party)),
+      map = Array.from(giveUniqueMapping(party))
+      mapStr = btoa(JSON.stringify(map)),
       frag = document.createDocumentFragment(),
       body = document.body;
 
+alert(String(mapStr));
 
 for (const [ sender, recipient ] of map) {
   const p = document.createElement("p");
