@@ -37,13 +37,13 @@ const party = [
       frag = document.createDocumentFragment(),
       body = document.body;
 
-alert(mapStr);
-alert(atob(mapStr));
-
-for (const [ sender, recipient ] of map) {
+for (const [ sender, [ codeLink, recipient] ] of map) {
   const p = document.createElement("p");
-  p.textContent = `${sender} donne à ${recipient}.`;
-  
+  const a = document.createElement("a");
+  a.href = `${window.location.href}#{code}`;
+
+  p.append(sender, " offre à ", a);
+
   frag.appendChild(p);
 }
 
