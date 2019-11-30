@@ -68,5 +68,3 @@ function after (base64Str) {
       : "Petit malin"
   );
 }
-
-after(btoa(JSON.stringify({})));
