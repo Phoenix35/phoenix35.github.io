@@ -38,6 +38,7 @@ const party = [
       body = document.body;
 
 alert(mapStr);
+alert(atob(mapStr));
 
 for (const [ sender, recipient ] of map) {
   const p = document.createElement("p");
