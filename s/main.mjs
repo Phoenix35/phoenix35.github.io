@@ -37,7 +37,7 @@ const party = [
       frag = document.createDocumentFragment(),
       body = document.body;
 
-alert(String(mapStr));
+alert(mapStr);
 
 for (const [ sender, recipient ] of map) {
   const p = document.createElement("p");
