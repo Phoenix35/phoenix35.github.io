@@ -2,7 +2,7 @@
 
 const o = JSON.parse(atob(base64Str));
 
-const recipient = window.location.substring(1);
+const recipient = window.location.hash.substring(1);
 
 alert(
   o.hasOwnProperty(recipient)
