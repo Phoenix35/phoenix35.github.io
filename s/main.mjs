@@ -34,9 +34,7 @@ const party = [
 ],
       map = Array.from(giveUniqueMapping(party)),
       frag = document.createDocumentFragment(),
-      body = document.body;
-
-const finalMap = Object.create(null);
+      finalMap = Object.create(null);
 
 for (const [ sender, [ codeLink, recipient] ] of map) {
   finalMap[codeLink] = recipient;
@@ -53,18 +51,6 @@ for (const [ sender, [ codeLink, recipient] ] of map) {
 
 console.log(btoa(JSON.stringify(finalMap)));
 
-body.appendChild(frag);
+document.body.appendChild(frag);
 
 })();
-
-function after (base64Str) {
-  const o = JSON.parse(atob(base64Str));
-  
-  const { hash } = window.location;
-
-  alert(
-    o.hasOwnProperty(hash)
-      ? `Tu offres à ${obj[hash]}`
-      : "Petit malin"
-  );
-}
